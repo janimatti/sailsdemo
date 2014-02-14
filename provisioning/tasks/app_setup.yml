@@ -8,7 +8,7 @@
   sudo: false
 
 - name: Import ignore file
-  template: src=templates/.foreverignore dest={{app_path}}/.foreverignore
+  template: src=templates/foreverignore dest={{app_path}}/.foreverignore
 
 - name: start demo app
   shell: cd {{ app_path }}; forever start app.js --prod
