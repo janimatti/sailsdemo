@@ -1,0 +1,7 @@
+---
+app_name: sailsdemo
+app_url: sailsdemo.localhost
+webroot: /vagrant
+app_path: "{{ webroot }}/sailsdemo"
+log_dir:  /var/log
+src_dir: /vagrant # See Vagrantfile for this

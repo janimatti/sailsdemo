@@ -1,0 +1,8 @@
+---
+# Symlink source code, import configs
+
+- name: Ensure webroot created
+  file: path={{ webroot }} state=directory
+
+- name: sails | Remove default app
+  file: path={{app_path}} state=absent

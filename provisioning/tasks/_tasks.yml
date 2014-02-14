@@ -1,0 +1,6 @@
+---
+
+- include: packages.yml
+- include: databases.yml
+- include: app_source.yml
+- include: app_setup.yml

@@ -1,0 +1,12 @@
+---
+- hosts: sailsdemo
+  user: vagrant
+  sudo: true
+
+  vars_files:
+    - vars/common.yml
+    - vars/packages.yml
+    - vars/databases.yml
+
+  tasks:
+    - include: tasks/_tasks.yml

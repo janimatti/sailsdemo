@@ -1,0 +1,10 @@
+---
+# Setup database
+- name: MariaDB | Start service
+  action: service name=mysql state=started
+
+- name: MariaDB | Setup database
+  mysql_db: db={{db_name}} state=present
+
+- name: MariaDB | Setup user
+  mysql_user: name={{db_user}} password={{db_pass}} priv=*.*:ALL state=present

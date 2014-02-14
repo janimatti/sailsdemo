@@ -1,0 +1,19 @@
+---
+
+mariadb_key: 'http://keyserver.ubuntu.com/pks/lookup?op=get&search=0xcbcb082a1bb943db'
+mariadb_repo: 'deb http://ftp.heanet.ie/mirrors/mariadb/repo/10.0/ubuntu precise main'
+
+nodejs_ppa: 'ppa:chris-lea/node.js'
+
+apt_items:
+  - build-essential
+  - mariadb-server
+  - curl
+  - vim
+  - python-mysqldb
+  - locate
+  - nodejs
+
+npm_items:
+  - sails
+  - forever

@@ -1,0 +1,7 @@
+---
+# Database vars
+
+db_name: sailsdemo
+db_user: sailsdemo
+db_owner: sailsdemo
+db_pass: sailsdemo

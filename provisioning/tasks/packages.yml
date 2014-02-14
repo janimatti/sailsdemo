@@ -1,0 +1,24 @@
+---
+
+- name: apt | Install python-software-properties
+  apt: pkg=python-software-properties state=present update_cache=yes
+
+- name: apt | Install mariadb key
+  apt_key: url={{ mariadb_key }}
+
+- name: apt | Install mariadb repository
+  apt_repository: repo='{{ mariadb_repo }}' state=present
+
+- name: update apt
+  command: /usr/bin/apt-get update
+
+- name: apt | Install node.js repository
+  apt_repository: repo='{{ nodejs_ppa }}' state=present
+
+- name: apt | Install web server packages
+  action: apt pkg={{ item }} state=installed update_cache=yes
+  with_items: apt_items
+
+- name: npm | Install npm packages
+  npm: name={{ item }} global=yes
+  with_items: npm_items

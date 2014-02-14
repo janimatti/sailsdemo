@@ -1,0 +1,14 @@
+---
+
+- name: create demo sails app
+  shell: cd {{ webroot }}; sails new {{ app_name }}
+
+- name: install local npm
+  shell: cd {{ app_path }}; npm install sails -l
+  sudo: false
+
+- name: Import ignore file
+  template: src=templates/.foreverignore dest={{app_path}}/.foreverignore
+
+- name: start demo app
+  shell: cd {{ app_path }}; forever start app.js --prod
